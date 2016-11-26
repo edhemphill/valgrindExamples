@@ -22,6 +22,11 @@ First, make the examples:
 smellytooth2:valgrindExamples ed$ make examples
 ```
 
+#### Debugging information
+You will notice the makefile uses the `-g -O0` options. This is to provide full symbols, so `valgrind` can show them, and also to disable as many optimizations as possible, in an attempt to make debugging easier.
+
+In some cases, it may be useful to use the valgrind switches: `--track-origins=yes --dsymutil=yes` - these can help provide more line information, especially when you have shared libraries or runtime loaded shared libraries.
+
 #### Examples
 The base line is `nice-malloc`. Running this still produces a lot of noise when your run it with `valgrind --leak-check=full`, that's because, not suprisingly, many base libraries don't clean up their memory correctly. In practice, there is not really anything wrong with this. If there is no way or reason the process will later need to reclaim that memory, then it's fine for the process to just bomb out with no `free()` call. When the process exits all the memory allocated to it by the OS will get `free()`'d anyway. Another reason for the noise is that some libraries allocate memory or play tricks on the stack pointer (SP in x86 assembly) which the valgrind has no way of understanding.
 
