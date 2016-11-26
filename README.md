@@ -13,6 +13,8 @@ After checking out the repo, go into the root dir of the repo and run the `build
 smellytooth2:valgrindExamples ed$ ./build.sh
 ```
 
+The `valgrind` executable will now be in `valgrindExamples/build/bin` - the header files will be in `valgrindExamples/build/include`
+
 #### Running examples
 
 First, make the examples:
@@ -77,3 +79,6 @@ The 16 and 19 bytes show up as obvious leaks.
 In some cases you may need autotools:
 * Install Homebrew, run this on the terminal: `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 * At the terminal: `brew install autotools` and `brew install automake` 
+
+#### Notes
+The valgrind dev team made some fixes in October to fix builds on OS X 10.11 and 10.12. If you get an error for `undefined symbols` concerning `__zero` it's becuase you are probably not on the most recent code. I pulled this valgrind straight from their `master` branch on Nov 26. Changes were checked Oct 23. https://sourceforge.net/p/valgrind/mailman/message/35445907/
