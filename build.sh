@@ -16,6 +16,7 @@ cd $THIS_DIR
 pushd valgrind
 ./configure --prefix=${BUILD_DIR} --enable-only64bit --build=amd64-darwin
 make
+make install
 popd
 
 
