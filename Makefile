@@ -13,18 +13,19 @@ CFLAGS= -g -O0
 
 EXAMPLES= test-wild-pointer test-double-malloc nice-malloc
 
+examples: $(EXAMPLES)
+
 test-double-malloc:
-	$(CC) test-double-malloc.c -o $@
+	$(CC) $(CFLAGS) test-double-malloc.c -o $@
 
 
 test-wild-pointer:
-	$(CC) test-wild-pointer.c -o $@
+	$(CC) $(CFLAGS) test-wild-pointer.c -o $@
 
 nice-malloc:
-	$(CC) $@.c -o $@
+	$(CC) $(CFLAGS) $@.c -o $@
 
 
-examples: $(EXAMPLES)
 
 clean:
 	-rm -rf *.o
