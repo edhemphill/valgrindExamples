@@ -1,5 +1,7 @@
 build/
 test-double-malloc
+test-wild-pointer
+nice-malloc
 *.dSYM
 *.o
 *~
