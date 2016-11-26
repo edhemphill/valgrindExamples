@@ -77,7 +77,9 @@ The 16 and 19 bytes show up as obvious leaks.
 
 #### Possible requirements
 In some cases you may need autotools:
-* Install Homebrew, run this on the terminal: `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+* Install Homebrew, run this on the terminal: 
+
+`ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 * At the terminal: `brew install autotools` and `brew install automake` 
 
 #### Notes
